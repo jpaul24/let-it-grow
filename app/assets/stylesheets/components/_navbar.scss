@@ -14,3 +14,10 @@
 .navbar-transparent {
   background: rgba(0, 0, 0, 0)
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  &:hover {
+    color: $green;
+  }
+}
