@@ -1,8 +1,14 @@
 // Specific CSS for your home-page
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700&display=swap");
 
-.home {
+.body {
+  background-image: url('grass.jpeg');
+  background-size: cover;
+  background-position: center;
   height: 100vh;
+}
+
+.home {
   display: flex;
   align-items: center;
 }
