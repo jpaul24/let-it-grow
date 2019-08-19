@@ -7,17 +7,12 @@
       <div>Where</div>
       <div class="searching">
         <%= form_tag("#", method: :get) do %>
-          <%= text_field_tag :search %>
-          <%= submit_tag 'Search' %>
+          <%= text_field_tag :search, nil, class: "input-field" %>
+          <div class="flex-btns" id="green-button">
+            <%= submit_tag 'Search', class: "btn btn-success" %>
+            <button type="button" class="btn btn-success">Browse All</button>
+          </div>
         <% end %>
-      </div>
-    </div>
-    <div class="buttons" id="green-button">
-      <div class="browse-all">
-        <button type="button" class="btn btn-success">Browse All</button>
-      </div>
-      <div class="search-button">
-        <button type="button" class="btn btn-success">Search</button>
       </div>
     </div>
   </div>
