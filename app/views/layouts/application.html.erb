@@ -9,15 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-    <% if current_page?(root_path) %>
-        <%= render 'shared/home_navbar' %>
-    <% else %>
-        <%= render "shared/navbar" %>
-    <% end %>
+    <div class="body">
+      <% if current_page?(root_path) %>
+          <%= render 'shared/home_navbar' %>
+      <% else %>
+          <%= render "shared/navbar" %>
+      <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

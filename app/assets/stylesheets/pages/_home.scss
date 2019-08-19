@@ -2,9 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700&display=swap");
 
 .home {
-  background-image: url('garden.jpg');
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -35,4 +32,15 @@
 
 .searching {
   width: 100%;
+}
+
+.input-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 15%;
+}
+
+.flex-btns {
+  display: flex;
+  justify-content: space-between;
 }
