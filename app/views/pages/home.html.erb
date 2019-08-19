@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home">
+  <div class="card">
+    <div class="tag">
+      <h1>Rent An Outside Space...</h1>
+    </div>
+    <div class="search-bar">
+      <div>Where</div>
+      <div class="searching">
+        <%= form_tag("#", method: :get) do %>
+          <%= text_field_tag :search %>
+          <%= submit_tag 'Search' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="buttons" id="green-button">
+      <div class="browse-all">
+        <button type="button" class="btn btn-success">Browse All</button>
+      </div>
+      <div class="search-button">
+        <button type="button" class="btn btn-success">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
