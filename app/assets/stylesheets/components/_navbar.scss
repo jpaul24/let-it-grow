@@ -18,6 +18,7 @@
 .navbar-light .navbar-nav .nav-link {
   color: white;
   &:hover {
-    color: $green;
+    color: $gray;
   }
+  font-weight: bold;
 }
