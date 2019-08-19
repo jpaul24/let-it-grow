@@ -1,16 +1,16 @@
 class GardensController < ApplicationController
 
-  before_action :set_garden
+  before_action :set_garden, only: [:show, :edit, :create, :update, :destroy]
 
   def index
     @gardens = Garden.all
   end
 
-  def show
-  end
-
   def new
     @garden = Garden.new
+  end
+
+  def show
   end
 
   def create
