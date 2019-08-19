@@ -1,17 +1,17 @@
 class GardensController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  before_action :set_garden
+  before_action :set_garden, only: [:show, :edit, :create, :update, :destroy]
 
   def index
     @gardens = Garden.all
   end
 
-  def show
-  end
-
   def new
     @garden = Garden.new
+  end
+
+  def show
   end
 
   def create

@@ -4,6 +4,6 @@
   <%= f.input :price_per_day %>
   <%= f.input :size %>
   <%= f.input :location %>
-  <%= f.input :purpose %>
-  <%= f.button :photo %>
+  <%= f.input :purpose, collection: Garden::PURPOSE %>
+  <%= f.button :submit %>
 <% end %>
