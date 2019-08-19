@@ -1,1 +1,9 @@
-new.html.erb
+<%= simple_form_for @garden do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price_per_day %>
+  <%= f.input :size %>
+  <%= f.input :location %>
+  <%= f.input :purpose %>
+  <%= f.button :photo %>
+<% end %>

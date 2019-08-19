@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path 'https://res.cloudinary.com/nmozzer/image/upload/v1566228605/grass_sgbotv.jpg', cloud_name: 'nmozzer' %>')">
+  <%= render 'shared/home_navbar' %>
+  <div class="card">
+    <div class="tag">
+      <h1>Rent An Outside Space...</h1>
+    </div>
+    <div class="search-bar">
+      <div>Where</div>
+      <div class="searching">
+        <%= form_tag("#", method: :get) do %>
+          <%= text_field_tag :search, nil, class: "input-field" %>
+          <div class="flex-btns" id="green-button">
+            <%= submit_tag 'Search', class: "btn btn-success" %>
+            <button type="button" class="btn btn-success">Browse All</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,13 @@
 class GardensController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
+  before_action :set_garden
+
   def index
     @gardens = Garden.all
   end
 
   def show
-    @garden = Garden.find(params[:id])
   end
 
   def new
@@ -12,21 +15,28 @@ class GardensController < ApplicationController
   end
 
   def create
-    @garden = Garden.new(params[:garden])
+    @garden = Garden.new(garden_params)
     @garden.save
   end
 
   def update
-    @garden = Garden.new(params[:garden])
-    @garden.update(params[:garden])
+    @garden.update(garden_params)
   end
 
   def edit
-    @garden = Garden.find(params[:id])
   end
 
   def destroy
-    @garden = Garden.find(params[:id])
     @garden.destroy
+  end
+
+  private
+
+  def set_garden
+    @garden = Garden.find(params[:id])
+  end
+
+  def garden_params
+    params.require(:gardens).permit(:name, :location, :price_per_day, :description, :purpose, :size, :photo, :user_id)
   end
 end
