@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
+
 john = User.create(username:"Johndoe", email:"john@gmail.com", password:"mypassword1", bio:"I want to share my lovely garden!")
 jane = User.create(username:"Janedoe", email:"jane@gmail.com", password:"mypassword1", bio:"I want to share my lovely garden!")
 joe = User.create(username:"Joe", email:"joe@gmail.com", password:"mypassword1", bio:"I want to share my lovely garden!")
@@ -20,7 +22,9 @@ nicksgarden = Garden.create(name:"Lovely suntrap", location:"NW1", size:"5", des
 terrisgarden = Garden.create(name:"Good for vegetables", location:"S5", size:"10", description:"Good quality soil", purpose:"Growing vegetables", price_per_day:"10", user:terri)
 benoitssgarden = Garden.create(name:"Nice space for dinner parties", location:"SE7", size:"40", description:"Fab outdoor space", purpose:"Garden Party", price_per_day:"50", user:benoit)
 
-janesreview = Review.new(rating:4, description:"gorgeous garden, we had a great time", user:jane, garden:johnsgarden)
-johnsreview = Review.new(rating:5, description:"great plot, potatoes grew really well", user:john, garden:janesgarden)
+janesreview = Review.create(rating:4, description:"gorgeous garden, we had a great time", user:jane, garden:johnsgarden)
+johnsreview = Review.create(rating:5, description:"great plot, potatoes grew really well", user:john, garden:janesgarden)
 
 
+johnsbooking = Booking.new( user_id:2, garden_id:1, start_date: DateTime.new(2019,01,01), end_date: DateTime.new(2020,01,01))
+johnsbooking.save
