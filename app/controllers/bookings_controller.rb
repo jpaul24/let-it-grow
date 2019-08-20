@@ -3,6 +3,10 @@ class BookingsController < ApplicationController
   before_action :set_garden, only: [:new, :create]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def new
     @booking = Booking.new
     @garden = Garden.find(params[:garden_id])
