@@ -1,6 +1,6 @@
-<%= @user.username %>
-<%= @user.bio %>
-<% @user.gardens.each do |garden| %>
+<%= current_user.username %>
+<%= current_user.bio %>
+<%  current_user.gardens.each do |garden| %>
 <%= garden.photo %>
 <%= garden.name %>
 <%= garden.location %>
@@ -8,3 +8,5 @@
 <%= garden.price_per_day %>
 <%= garden.size %>
 <% end %>
+
+
