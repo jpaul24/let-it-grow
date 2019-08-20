@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :gardens
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   validates :username, presence: true
   validates :username, uniqueness: true
 
