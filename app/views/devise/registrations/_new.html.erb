@@ -4,8 +4,9 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
         <h4 class="modal-title">Sign up</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
       </div>
@@ -25,19 +26,20 @@
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
           </div>
+      </div>
 
+      <div class="modal-footer">
           <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
-        <% end %>
+      </div>
+      <div class="row m-0 justify-content-around">
+            <%= render "devise/shared/links" %>
+      </div>
 
-        <%= render "devise/shared/links" %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
     </div>
-
+        <% end %>
   </div>
 </div>
 
