@@ -1,5 +1,6 @@
 class GardensController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!
+  # , only: [:index, :show]
 
   before_action :set_garden, only: [:show, :edit, :create, :update, :destroy]
 
@@ -12,6 +13,7 @@ class GardensController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def create
