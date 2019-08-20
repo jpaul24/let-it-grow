@@ -1,3 +1,36 @@
+<div class="jumbotron" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path 'https://res.cloudinary.com/nmozzer/image/upload/v1566305175/benjamin-combs-wuU_SSxDeS0-unsplash_sdgwbl.jpg', cloud_name: 'nmozzer' %>')">
+  <div class="jumbotron-text-container">
+    <h1 class="display-4">Hello Garden Owner!</h1>
+    <p class="lead text-lg">Want to see your garden used to its full potential? Travel below and find out more!</p>
+    <hr class="my-4">
+    <p class="text-padding">Looking to rent a garden rather than list one?</p>
+    <p class="lead">
+      <%= link_to "Take a walk through the gardens", gardens_path, class: "btn btn-primary btn-lg btn-green" %>
+  </div>
+  </p>
+</div>
+
+<div class="container flex">
+  <h2 class="text-center">How it works</h2>
+  <div class="info-cards">
+    <div class="info-card">
+      <img src="images/apply.svg" alt="Apply!">
+      <h4>Apply</h4>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="info-card">
+      <img src="images/learn.svg" alt="Learn!">
+      <h4>Learn to code</h4>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="info-card">
+      <img src="images/product.svg" alt="Product!">
+      <h4>Build products</h4>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+</div>
 <div class="container">
   <%= simple_form_for @garden do |f| %>
     <%= f.input :name %>
