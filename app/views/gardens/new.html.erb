@@ -1,9 +1,13 @@
-<%= simple_form_for @garden do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price_per_day %>
-  <%= f.input :size %>
-  <%= f.input :location %>
-  <%= f.input :purpose, collection: Garden::PURPOSE %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @garden do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price_per_day %>
+    <%= f.input :size %>
+    <%= f.input :location %>
+    <%= f.input :purpose, collection: Garden::PURPOSE %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

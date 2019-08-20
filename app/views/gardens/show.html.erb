@@ -1,4 +1,7 @@
-<h2><%= @garden.name %></h2>
+<div class="container">
+  <div class="text-center header-show">
+    <h2 ><%= @garden.name %></h2>
+  </div>
 
 <%= @garden.description %>
 <%= @garden.price_per_day %>
@@ -24,3 +27,4 @@
 <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
 <%= f.button :submit %>
 <% end %>
+
