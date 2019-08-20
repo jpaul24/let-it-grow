@@ -5,7 +5,8 @@ class Garden < ApplicationRecord
   validates :price_per_day, presence: true
   validates :purpose, inclusion: { in: PURPOSE }
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   belongs_to :user
 
   mount_uploader :photo, PhotoUploader
