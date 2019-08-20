@@ -34,11 +34,14 @@
   align-items: center;
   justify-content: space-between;
 }
-.booking-show {
+#booking-show {
   width: 35%;
   margin: 20px 0 0 10px;
   padding: 20px;
   border: 1px solid #D3D3D3;
+  height: 300px;
+  top: 20px;
+  position: sticky;
 }
 .margin-general {
   margin: 20px 0;
@@ -55,4 +58,7 @@
 }
 .review-add {
   margin-bottom: 50px;
+}
+#coordinates {
+ color: rgba(0, 0, 0, 0);
 }
