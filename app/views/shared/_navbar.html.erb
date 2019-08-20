@@ -1,7 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon logo">
   <div class="navbar-search d-flex align-items-center">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", id: "logo" %>
+      <div>
+        <h1 class="grow-dark">Let it gr<i class="fas fa-seedling icon-dark"></i></i>w</h1></i>
+      </div>
       <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +33,8 @@
         </li>
       <% else %>
         <li class="nav-item d-flex">
-          <%= link_to "Login", new_user_session_path, class: "nav-link nav-font-black" %>
-          <%= render 'devise/registrations/new' %>
+          <%= render 'devise/sessions/new'%>
+          <%= render 'devise/registrations/new'%>
           <%= link_to "Gardens", gardens_path, class: "nav-link nav-font-black" %>
         </li>
       <% end %>
