@@ -1,0 +1,33 @@
+.jumbotron {
+  max-width: 85vw;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.jumbotron-text-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, .5)
+}
+
+.btn-green {
+  background-color: $green;
+  border: none;
+}
+
+.text-padding {
+ padding: 20px 0px;
+}
+
+.text-lg {
+  font-size: 30px;
+}
+
+
+

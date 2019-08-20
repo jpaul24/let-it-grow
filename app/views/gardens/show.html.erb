@@ -1,9 +1,37 @@
-<div class="container">
-  <div class="text-center header-show">
+<div class="show-container">
+  <div class="show-image-container" style="background-image: url('https://images.pexels.com/photos/1843647/pexels-photo-1843647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')">
+  </div>
+</div>
+<div class="show-content-container">
+  <div class="header-show">
     <h2 ><%= @garden.name %></h2>
   </div>
+  <div class="show-info">
+    <p><%= @garden.purpose %></p>
+    <p><%= @garden.description %></p>
+  </div>
+  <div class="review-container">
+    <h4>Reviews</h4>
+    <% @garden.reviews.each do |review| %>
+    <div class="review-show">
+      <div>
+        <p> Review: <%= review.description %> </p>
+      </div>
+      <div class="review-info-small">
+        <p><%= review.user.username %></p>
+        <p> Rating: <%= review.rating %>/5 </p>
+      </div>
+      <% if review.user == current_user %>
+      <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
 
-<%= @garden.description %>
+
+
+
 <%= @garden.price_per_day %>
 <%= @garden.size %>
 <%= @garden.photo %>
@@ -13,7 +41,7 @@
 <h4>Reviews</h4>
 <% @garden.reviews.each do |review| %>
 <p> Review: <%= review.description %> </p>
-<p> Rating: <%= review.rating %>/10 </p>
+<p> Rating: <%= review.rating %>/5 </p>
 <p> User: <%= review.user.username %></p>
 <% if review.user == current_user %>
 <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>

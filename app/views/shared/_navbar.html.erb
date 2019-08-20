@@ -1,7 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon logo">
   <div class="navbar-search d-flex align-items-center">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", id: "logo" %>
+      <div>
+        <h1 class="grow-dark">Let it gr<i class="fas fa-seedling icon-dark"></i></i>w</h1></i>
+      </div>
       <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,24 +18,24 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link nav-font-black" %>
+          <%= link_to "Home", root_path, class: "nav-link nav-font-black" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Profile", "#", class: "nav-link nav-font-black" %>
+          <%= link_to "My Profile", user_path(current_user), class: "nav-link nav-font-black" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Create a garden", new_garden_path, class: "dropdown-item" %>
+            <%= link_to "My bookings", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item d-flex">
-          <%= link_to "Login", new_user_session_path, class: "nav-link nav-font-black" %>
-          <%= link_to "Signup", new_user_registration_path, class: "nav-link nav-font-black" %>
-          <%= link_to "Gardens", "#", class: "nav-link nav-font-black" %>
+          <%= render 'devise/sessions/new'%>
+          <%= render 'devise/registrations/new'%>
+          <%= link_to "Gardens", gardens_path, class: "nav-link nav-font-black" %>
         </li>
       <% end %>
     </ul>
