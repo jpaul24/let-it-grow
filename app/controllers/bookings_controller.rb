@@ -1,11 +1,17 @@
 class BookingsController < ApplicationController
 
-  before_action :set_garden, only: [:new, :edit]
+  before_action :set_garden, only: [:new, :create]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
+<<<<<<< Updated upstream
+=======
+  def index
+    @bookings = current_user.bookings
+  end
+>>>>>>> Stashed changes
+
   def new
     @booking = Booking.new
     @garden = Garden.find(params[:garden_id])
-    @user = current_user
   end
 
   def create
@@ -14,17 +20,17 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to user_path(current_user)
+      redirect_to gardens_path
     else
       render :new
     end
   end
 
-  def show
-  end
-
   def edit
     @booking = Booking.find(params[:id])
+  end
+
+  def show
   end
 
   def update
