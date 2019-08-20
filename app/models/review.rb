@@ -6,4 +6,6 @@ class Review < ApplicationRecord
   validates :description, presence: true
   validates :rating, presence: true
   validates :rating, inclusion: { in: RATING }
+
+
 end
