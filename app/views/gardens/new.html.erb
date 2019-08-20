@@ -11,36 +11,65 @@
   </p>
 </div>
 
-<div class="container flex">
-  <h2 class="text-center">How it works</h2>
+<div class="container flex container-height">
+  <h2 class="text-center text-lger">How it works</h2>
   <div class="info-cards">
     <div class="info-card">
-      <img src="images/apply.svg" alt="Apply!">
-      <h4>Apply</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <i class="fas fa-tractor tractor-red"></i>
+      <h4>Agriculture</h4>
+      <p>Rent a larger space for more serious growers.</p>
     </div>
     <div class="info-card">
-      <img src="images/learn.svg" alt="Learn!">
-      <h4>Learn to code</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <i class="fas fa-spa spa-green"></i>
+      <h4>Allotment</h4>
+      <p>Rent a smaller space for a green fingered enthusiast.</p>
     </div>
     <div class="info-card">
-      <img src="images/product.svg" alt="Product!">
-      <h4>Build products</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <i class="fas fa-glass-cheers cheers-yellow"></i>
+      <h4>Allota fun</h4>
+      <p>Rent your garden for a garden part.</p>
     </div>
   </div>
 </div>
-<div class="container">
-  <%= simple_form_for @garden do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :price_per_day %>
-    <%= f.input :size %>
-    <%= f.input :location %>
-    <%= f.input :purpose, collection: Garden::PURPOSE %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit %>
-  <% end %>
+
+<div class="image-banner">
+  <div class="img-third" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566310543/farming_avwucx.jpg')"></div>
+  <div class="img-third" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566310548/gardening_er7yrs.jpg')"></div>
+  <div class="img-third" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566310539/garden_party_nbmgve.jpg')"></div>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center form-margin-top" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566311538/background-form-garden_vtguhd.jpg')">
+  <button type="button" class="btn btn-green btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">List your Garden!</button>
+</div>
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <h2 class="text-center text-lger">Fill in the details of your Garden!</h2>
+      <div class="form-padding">
+        <%= simple_form_for @garden do |f| %>
+        <div class="form-container d-flex" >
+          <div class="form-main-body">
+            <%= f.input :name %>
+            <%= f.input :price_per_day %>
+            <%= f.input :size %>
+            <%= f.input :location %>
+            <%= f.input :purpose, collection: Garden::PURPOSE %>
+          </div>
+          <div class="form-secondary-body">
+            <%= f.input :description, input_html: {rows: 9} %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+
+        </div>
+        <div class="submit-center">
+            <%= f.button :submit, "List your Garden!", class: "text-center btn btn-green" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
