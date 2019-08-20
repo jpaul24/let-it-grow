@@ -57,34 +57,3 @@
     </div>
   </div>
 </div>
-<<<<<<< show-view
-=======
-
-
-
-
-<%= @garden.price_per_day %>
-<%= @garden.size %>
-<%= @garden.photo %>
-<%= @garden.location %>
-<%= @garden.purpose %>
-
-<h4>Reviews</h4>
-<% @garden.reviews.each do |review| %>
-<p> Review: <%= review.description %> </p>
-<p> Rating: <%= review.rating %>/5 </p>
-<p> User: <%= review.user.username %></p>
-<% if review.user == current_user %>
-<p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
-<% end %>
-<% end %>
-
-<h4>Leave a review...</h4>
-
-<%= simple_form_for [@garden, @review] do |f| %>
-<%= f.input :description %>
-<%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
-<%= f.button :submit %>
-<% end %>
-
->>>>>>> master
