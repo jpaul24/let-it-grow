@@ -46,12 +46,14 @@
       <div>
         <h4>Location</h4>
       </div>
-      <div>
-        <%= @garden.location %>
+      <div >
+        <p id="location"><%= @garden.location %></p>
       </div>
+      <p id="coordinates"></p>
+      <div id="map" style="height: 350px; width: 100%"></div>
     </div>
   </div>
-  <div class="booking-show">
+  <div id="booking-show">
     <div>
       <h3>£<%= @garden.price_per_day %>/day</h3>
     </div>
