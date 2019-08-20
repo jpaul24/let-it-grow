@@ -13,7 +13,7 @@
 <h4>Reviews</h4>
 <% @garden.reviews.each do |review| %>
 <p> Review: <%= review.description %> </p>
-<p> Rating: <%= review.rating %>/10 </p>
+<p> Rating: <%= review.rating %>/5 </p>
 <p> User: <%= review.user.username %></p>
 <% if review.user == current_user %>
 <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
