@@ -16,10 +16,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", "#", class: "nav-link nav-font-black" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "My Profile", "#", class: "nav-link nav-font-black" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -31,9 +31,9 @@
         </li>
       <% else %>
         <li class="nav-item d-flex">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <%= link_to "Signup", new_user_registration_path, class: "nav-link" %>
-          <%= link_to "Gardens", "#", class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link nav-font-black" %>
+          <%= link_to "Signup", new_user_registration_path, class: "nav-link nav-font-black" %>
+          <%= link_to "Gardens", "#", class: "nav-link nav-font-black" %>
         </li>
       <% end %>
     </ul>
