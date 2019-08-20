@@ -20,3 +20,4 @@ janesreview = Review.new(rating:4, description:"gorgeous garden, we had a great 
 johnsreview = Review.new(rating:5, description:"great plot, potatoes grew really well", user:john, garden:janesgarden)
 janesreview.save
 johnsreview.save
+

@@ -1,7 +1,7 @@
 class GardensController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  before_action :set_garden, only: [:show, :edit, :create, :update, :destroy]
+  before_action :set_garden, only: [:show, :edit, :update, :destroy]
 
   def index
     @gardens = Garden.all
@@ -12,6 +12,7 @@ class GardensController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def create
@@ -37,6 +38,6 @@ class GardensController < ApplicationController
   end
 
   def garden_params
-    params.require(:gardens).permit(:name, :location, :price_per_day, :description, :purpose, :size, :photo, :user_id)
+    params.require(:garden).permit(:name, :location, :price_per_day, :description, :purpose, :size, :photo, :user_id)
   end
 end
