@@ -32,7 +32,7 @@
       <% else %>
         <li class="nav-item d-flex">
           <%= link_to "Login", new_user_session_path, class: "nav-link nav-font-black" %>
-          <%= link_to "Signup", new_user_registration_path, class: "nav-link nav-font-black" %>
+          <%= render 'devise/registrations/new' %>
           <%= link_to "Gardens", gardens_path, class: "nav-link nav-font-black" %>
         </li>
       <% end %>

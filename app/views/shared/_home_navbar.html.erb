@@ -27,7 +27,7 @@
         </li>
       <% else %>
         <li class="nav-item d-flex">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= render 'devise/sessions/new' %>
           <%= render 'devise/registrations/new' %>
           <%= link_to "Gardens", gardens_path, class: "nav-link" %>
         </li>
