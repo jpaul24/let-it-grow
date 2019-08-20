@@ -24,11 +24,31 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: white;
-  &:hover {
-    color: $gray;
-  }
+  color: black;
   font-weight: bold;
+}
+
+
+.grow {
+  font-family: 'Satisfy', cursive;
+  color: white;
+  font-size: 40px;
+}
+
+.icon {
+  color: white;
+  font-size: 30px;
+}
+
+.grow-dark {
+  font-family: 'Satisfy', cursive;
+  color: $gray;
+  font-size: 40px;
+}
+
+.icon-dark {
+  color: $gray;
+  font-size: 30px;
 }
 
 
