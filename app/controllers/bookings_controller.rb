@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
-
   def new
     @booking = Booking.new
     @garden = Garden.find(params[:garden_id])
