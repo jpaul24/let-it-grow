@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
+
+
 john = User.new(username:"Johndoe", email:"john@gmail.com", password:"mypassword1")
 jane = User.new(username:"Janedoe", email:"jane@gmail.com", password:"mypassword1")
 john.save
@@ -21,3 +24,5 @@ johnsreview = Review.new(rating:5, description:"great plot, potatoes grew really
 janesreview.save
 johnsreview.save
 
+johnsbooking = Booking.new( user_id:2, garden_id:1, start_date: DateTime.new(2019,01,01), end_date: DateTime.new(2020,01,01))
+johnsbooking.save
