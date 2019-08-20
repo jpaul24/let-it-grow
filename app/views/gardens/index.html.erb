@@ -1,27 +1,26 @@
-<div class="my-container">
-  <div class="text-center index-header">
-    <h1>Available Gardens</h1>
-  </div>
-  <div class="row">
-  <% @gardens.each do |garden| %>
-    <div class="col-3">
-      <%= link_to garden_path(garden) do  %>
-        <div class="index-card">
-          <div class="garden-image">
-            <img src="<%= garden.photo %>" alt="garden">
-          </div>
-          <div class="card-info">
-            <div>
-              <h2><%= garden.name %></h2>
-            </div>
-            <div class="card-info-small">
-              <p>£<%= garden.price_per_day %>/day</p>
-              <p><%= garden.location %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+<div class="index-container">
+  <div clas="row">
+    <div class="align-items-left header">
+    <p>Available Gardens</p>
     </div>
-  <% end %>
   </div>
+
+  <div class="row">
+    <% @gardens.each do |garden| %>
+      <div class="col-sm-3 hover">
+        <%= link_to garden_path(garden) do %>
+        <img src="https://picsum.photos/200/200" class="card-img-top garden-image" alt="garden">
+        <p class="purpose"><%= garden.purpose.upcase %></p>
+          <h3 class="card-title"><%= garden.name %> </h3>
+          <div class="card-info">
+            <p class="card-text"><%= garden.location %></p>
+            <p class="card-text">£<%= garden.price_per_day %>/day | <%= garden.size %>m2</p>
+          </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
+
+
