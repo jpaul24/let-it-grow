@@ -15,6 +15,14 @@
   background: rgba(0, 0, 0, 0)
 }
 
+.navbar-light .navbar-nav .nav-link .nav-font-black a {
+  color: $gray;
+  &:hover {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  font-weight: bold;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: white;
   &:hover {
@@ -22,3 +30,5 @@
   }
   font-weight: bold;
 }
+
+
