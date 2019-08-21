@@ -5,6 +5,16 @@ class GardensController < ApplicationController
 
   def index
     @gardens = Garden.all
+
+    @geogardens = Garden.geocoded #returns flats with coordinates
+
+    @markers = @geogardens.map do |garden|
+      {
+        lat: garden.latitude,
+        lng: garden.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { garden: garden })
+      }
+    end
   end
 
   def new
