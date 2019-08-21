@@ -7,6 +7,7 @@
     <div class="header-show">
       <h2 ><%= @garden.name %></h2>
       <h5><%= @garden.location %></h5>
+      <h6><%= @garden.size %>/m²</h6>
     </div>
     <div class="margin-general">
       <div class="purpose">
@@ -28,7 +29,9 @@
           <p><%= review.description %> </p>
         </div>
         <% if review.user == current_user %>
-          <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
+          <%= link_to review_path(review), method: :delete do  %>
+            <i class="fas fa-trash-alt" ></i>
+          <% end %>
         <% end %>
       </div>
       <% end %>
@@ -56,6 +59,13 @@
   <div id="booking-show">
     <div>
       <h3>£<%= @garden.price_per_day %>/day</h3>
+    </div>
+    <div class="book-garden">
+      <%= simple_form_for [@garden, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, class: "btn btn-success w-100" %>
+        <% end %>
     </div>
   </div>
 </div>

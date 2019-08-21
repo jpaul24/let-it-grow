@@ -1,3 +1,20 @@
 // Import page-specific CSS files here.
 @import "home";
 
+p {
+  margin-bottom: 0px;
+}
+
+.my-container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+a {
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
