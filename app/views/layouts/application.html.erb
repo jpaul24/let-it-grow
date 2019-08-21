@@ -17,6 +17,14 @@
              <%= render "shared/navbar" %>
          <% end %>
 
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <% if !current_page?(root_path) %>
+          <%= render "shared/footer" %>
+      <% end %>
+
          <p class="notice"><%= notice %></p>
          <p class="alert"><%= alert %></p>
        </div>
@@ -29,6 +37,7 @@
          <% end %>
        </div>
     </div>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 </html>
