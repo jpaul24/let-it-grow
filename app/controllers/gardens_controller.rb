@@ -24,6 +24,14 @@ class GardensController < ApplicationController
   def show
     @review = Review.new
     @booking = Booking.new
+
+    @markers = [
+      {
+        lat: @garden.latitude,
+        lng: @garden.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { garden: @garden })
+      }
+    ]
   end
 
   def create
