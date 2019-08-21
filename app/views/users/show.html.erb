@@ -1,34 +1,31 @@
-
-<div class="my-container">
-
-  <div class="flex-container">
-  <div class="card-user">
-    <img src="#" />
-    <div class="card-product-infos">
-      <div class="user-infos">
-        <h4>Username: <%= current_user.username %></h4>
-        <h4>Bio: <%= current_user.bio %></h4>
-      <span class="btn-update"><%= link_to "Update profile", edit_user_path %></span>
-    </div>
-  </div>
-
-  <h2>My garden</h2>
-
-  <div class="card-garden">
-    <img src="https://images.unsplash.com/photo-1556201977-1df3c782a58e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" />
-      <div class="card-text">
-      <%  current_user.gardens.each do |garden| %>
-      <%= garden.photo %>
-      <h4>Name: <%= garden.name %></h4>
-      <h4>Location: <%= garden.location %></h4>
-      <h4>Purpose: <%= garden.purpose %></h4>
-      <h4>Price: <%= garden.price_per_day %></h4>
-      <h4>Size: <%= garden.size %></h4>
-      <% end %>
+<div class="show-container">
+  <div class="cards-container">
+    <div class="item-card">
+      <img src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1479&q=80" />
+      <div class="card-product-infos">
+        <div class="user-infos">
+          <h4>Username: <%= current_user.username %></h4>
+          <h4>Bio: <%= current_user.bio %></h4>
+        </div>
+        <div class="first-button">
+          <span class="btn-update"><%= link_to "Update profile", edit_user_path %></span>
+        </div>
       </div>
+    </div>
+    <h3 style="margin: 40px 0px 20px;">My Garden</h3>
+    <div class="item-card">
+      <img src="https://images.unsplash.com/photo-1556201977-1df3c782a58e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" />
+      <div class="garden-card">
+        <%  current_user.gardens.each do |garden| %>
+        <h4>Name: <%= garden.name %></h4>
+        <h4>Location: <%= garden.location %></h4>
+        <h4>Purpose: <%= garden.purpose %></h4>
+        <h4>Price: <%= garden.price_per_day %></h4>
+        <h4>Size: <%= garden.size %></h4>
+        <% end %>
+      </div>
+    </div>
+    <br>
+    <span class="btn-bookings"><%= link_to "My bookings", bookings_path %></span>
   </div>
-  </div>
-
-  <br>
-  <span class="btn-bookings"><%= link_to "My bookings", bookings_path %></span>
 </div>
