@@ -11,33 +11,16 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-    <div id="container">
-       <div id="header">
-         <% if !current_page?(root_path) %>
-             <%= render "shared/navbar" %>
-         <% end %>
+    <% if !current_page?(root_path) %>
+        <%= render "shared/navbar" %>
+    <% end %>
 
-
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-      <% if !current_page?(root_path) %>
-          <%= render "shared/footer" %>
-      <% end %>
-
-         <p class="notice"><%= notice %></p>
-         <p class="alert"><%= alert %></p>
-       </div>
-       <div id="body">
-          <%= yield %>
-       </div>
-       <div id="footer">
-         <% if !current_page?(root_path) %>
-             <%= render "shared/footer" %>
-         <% end %>
-       </div>
-    </div>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+     <% if !current_page?(root_path) %>
+         <%= render "shared/footer" %>
+     <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 </html>
