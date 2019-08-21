@@ -1,6 +1,11 @@
 .simple-calendar {
   padding: 30px;
-  .day {}
+  .day {
+    max-width: 50px;
+    max-height: 50px;
+    border: 1px solid;
+    background-color: white;
+  }
 
   .wday-0 {}
   .wday-1 {}
@@ -22,5 +27,18 @@
 
   .has-events {
     background-color: $green;
+    color: white;
+  }
+}
+
+.calendar-day-titles {
+  background-color: $green;
+  border: 1px solid;
+  color: white;
+}
+
+.calendar-heading {
+  a {
+    color: $green;
   }
 }

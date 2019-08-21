@@ -1,6 +1,8 @@
 .bookings-container {
   margin: 0px auto;
+  width: 80vw;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .bookings-card {
