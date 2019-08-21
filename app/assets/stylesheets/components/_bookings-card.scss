@@ -1,6 +1,8 @@
 .bookings-container {
   margin: 0px auto;
+  width: 80vw;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .bookings-card {
@@ -12,8 +14,10 @@
   color: white;
   img {
     border-radius: 5px;
+    height:150px;
+    width: 50%;
   }
-  min-width: 350px;
+  width: 350px;
 }
 
 .bookings-text {
@@ -25,4 +29,18 @@
   }
   padding: 5px 5px;
 }
+
+.modal-body {
+  h2 {
+    padding: 20px 0px;
+
+  }
+
+  h3 {
+
+
+  }
+}
+
+
 
