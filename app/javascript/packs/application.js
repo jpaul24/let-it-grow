@@ -1,3 +1,4 @@
 import "bootstrap";
-import { mapTool } from "../components/map"
+import { mapTool } from "../plugins/map";
+
 mapTool();
