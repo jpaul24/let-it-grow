@@ -28,10 +28,10 @@
           <p><%= review.description %> </p>
         </div>
         <% if review.user == current_user %>
-        <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
+          <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
         <% end %>
-      <% end %>
       </div>
+      <% end %>
     </div>
     <div class="review-add">
       <h4>Leave a review...</h4>
