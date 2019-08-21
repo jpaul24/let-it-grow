@@ -1,0 +1,99 @@
+// card Garden
+
+
+.card-garden {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-garden img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-garden h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-garden p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px
+}
+
+// Card user
+
+.card-user {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-user img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-user h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-user p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px
+}
+
+
+// buttons
+
+a {
+  color: white
+}
+
+.btn-update {
+  margin-left: 15px;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #5CA96F;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn-bookings {
+  margin-left: 15px;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #5CA96F;
+  color: white;
+  border-radius: 5px;
+}
