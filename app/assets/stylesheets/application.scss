@@ -1,3 +1,4 @@
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -14,15 +15,3 @@
 @import "gardens/index-garden";
 @import "devises/index";
 
-p {
-  margin-bottom: 0px;
-}
-
-.my-container {
-  margin: 0 auto;
-  width: 95%;
-}
-
-a:hover {
-  text-decoration: none;
-}
