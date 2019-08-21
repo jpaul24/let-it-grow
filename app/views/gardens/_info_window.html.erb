@@ -3,7 +3,9 @@
     <img src="<%= garden.photo %>" alt="">
   </div>
   <div class="row">
+    <%= link_to garden_path(garden) do %>
     <h4 class="title"><%= garden.name %></h4>
+    <% end %>
     <p class="info"><%= garden.purpose %></p>
   </div>
 </div>
