@@ -2,11 +2,13 @@
   <div class="show-image-container" style="background-image: url('https://images.pexels.com/photos/1843647/pexels-photo-1843647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')">
   </div>
 </div>
+
 <div class="all-show-container">
   <div class="show-content-container">
     <div class="header-show">
       <h2 ><%= @garden.name %></h2>
       <h5><%= @garden.location %></h5>
+      <h6><%= @garden.size %>/m²</h6>
     </div>
     <div class="margin-general">
       <div class="purpose">
@@ -28,20 +30,22 @@
           <p><%= review.description %> </p>
         </div>
         <% if review.user == current_user %>
-          <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
+          <%= link_to review_path(review), method: :delete do  %>
+            <i class="fas fa-trash-alt" ></i>
+          <% end %>
         <% end %>
       </div>
       <% end %>
+    <div class="btn-review">
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
+        Leave a review
+      </button>
     </div>
-    <div class="review-add">
-      <h4>Leave a review...</h4>
+  </div>
 
-      <%= simple_form_for [@garden, @review] do |f| %>
-      <%= f.input :description %>
-      <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
-      <%= f.button :submit, class: "btn btn-success" %>
-      <% end %>
-    </div>
+    <!-- Button trigger modal -->
+
+
     <div class="map">
       <div>
         <h4>Location</h4>
@@ -49,13 +53,45 @@
       <div >
         <p id="location"><%= @garden.location %></p>
       </div>
-      <p id="coordinates"></p>
-      <div id="map" style="height: 350px; width: 100%"></div>
+        <p id="coordinates"></p>
+        <div id="" style="height: 350px; width: 100%"></div>
     </div>
-  </div>
+</div>
+
   <div id="booking-show">
     <div>
       <h3>£<%= @garden.price_per_day %>/day</h3>
     </div>
+    <div class="book-garden">
+      <%= simple_form_for [@garden, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, class: "btn btn-success w-100" %>
+        <% end %>
+    </div>
   </div>
-</div>
+
+
+<!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Leave a review...</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="review-add">
+          <%= simple_form_for [@garden, @review] do |f| %>
+          <%= f.input :description %>
+          <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
+          <%= f.button :submit, class: "btn btn-success" %>
+          <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

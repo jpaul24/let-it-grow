@@ -1,0 +1,28 @@
+.bookings-container {
+  margin: 0px auto;
+  display: flex;
+}
+
+.bookings-card {
+  display: flex;
+  margin: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: $green;
+  color: white;
+  img {
+    border-radius: 5px;
+  }
+  min-width: 350px;
+}
+
+.bookings-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    font-size: 10px;
+  }
+  padding: 5px 5px;
+}
+
