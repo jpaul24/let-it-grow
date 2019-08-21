@@ -26,18 +26,6 @@
   color: gray;
 }
 
-.index-card {
-  width: 350px;
-  height: 350px;
-  padding: 15px;
-  margin: 5px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  h2 {
-    font-size: 16px;
-  }
-}
 
 .garden-image {
   width: 100%;
@@ -52,10 +40,4 @@
   display: flex;
   justify-content: space-between;
   color: $gray;
-}
-
-.card-info-small {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
 }
