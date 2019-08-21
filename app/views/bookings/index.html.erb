@@ -1,12 +1,7 @@
 <% @bookings.each do |booking| %>
-<<<<<<< HEAD
-<%= booking.garden %>
-<% end %>
-=======
 <%= booking.garden.name %> /
 <%= booking.garden.photo %> /
 <%= booking.start_date.strftime("%m/%d/%Y") %> /
 <%= booking.end_date.strftime("%m/%d/%Y") %> /
 <% end %>
 
->>>>>>> c23a925def747473e7ae3103ea614ebecfa9eab9
