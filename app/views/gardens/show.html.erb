@@ -28,7 +28,7 @@
           <p><%= review.description %> </p>
         </div>
         <% if review.user == current_user %>
-        <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
+          <p> <%= link_to "Delete review", review_path(review), method: :delete %> </p>
         <% end %>
       <% end %>
       </div>
