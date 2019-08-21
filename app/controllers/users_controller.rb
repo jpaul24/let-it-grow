@@ -8,12 +8,12 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user)
   end
 
   private
 
   def user_params
-    params.require(:users).permit(:email, :username, :bio)
+    params.require(:user).permit(:email, :username, :bio)
   end
 end

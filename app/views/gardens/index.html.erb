@@ -11,7 +11,8 @@
       <% @gardens.each do |garden| %>
         <div class="col-4 hover">
           <%= link_to garden_path(garden) do %>
-          <%= cl_image_tag(garden.photo) %>
+          <%= cl_image_tag(garden.photo, height: 200,
+             crop: :fill) %>
           <p class="purpose"><%= garden.purpose.upcase %></p>
             <h3 class="card-title"><%= garden.name %> </h3>
             <div class="card-info">
