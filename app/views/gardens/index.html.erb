@@ -6,21 +6,33 @@
   </div>
 
   <div class="row">
-    <% @gardens.each do |garden| %>
-      <div class="col-sm-3 hover">
-        <%= link_to garden_path(garden) do %>
-        <img src="https://picsum.photos/200/200" class="card-img-top garden-image" alt="garden">
-        <p class="purpose"><%= garden.purpose.upcase %></p>
-          <h3 class="card-title"><%= garden.name %> </h3>
-          <div class="card-info">
-            <p class="card-text"><%= garden.location %></p>
-            <p class="card-text">£<%= garden.price_per_day %>/day | <%= garden.size %>m2</p>
-          </div>
-      </div>
+    <div class="col-8">
+      <div class="row">
+      <% @gardens.each do |garden| %>
+        <div class="col-4 hover">
+          <%= link_to garden_path(garden) do %>
+          <img src="https://picsum.photos/100/100" class="card-img-top garden-image" alt="garden">
+          <p class="purpose"><%= garden.purpose.upcase %></p>
+            <h3 class="card-title"><%= garden.name %> </h3>
+            <div class="card-info">
+              <p class="card-text"><%= garden.location %></p>
+              <p class="card-text">£<%= garden.price_per_day %>/day | <%= garden.size %>m²</p>
+            </div>
+        </div>
+        <% end %>
       <% end %>
-    <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div
+      id="map"
+      style="width: 100%;
+      height: 500px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
   </div>
-
 </div>
 
 

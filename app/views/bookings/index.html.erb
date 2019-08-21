@@ -1,7 +1,54 @@
-<% @bookings.each do |booking| %>
-<%= booking.garden.name %> /
-<%= booking.garden.photo %> /
-<%= booking.start_date.strftime("%m/%d/%Y") %> /
-<%= booking.end_date.strftime("%m/%d/%Y") %> /
-<% end %>
+<div class="bookings-container" data-toggle="modal" data-target="#exampleModalCenter">
+  <% @bookings.each do |booking| %>
+    <div class="bookings-card">
+      <% if booking.garden.photo.model[:photo] %>
+        <%= cl_image_tag(booking.garden.photo,
+              width: 150, height: 90, crop: :fill) %>
+      <% else %>
+        <%= cl_image_tag("dyapkyhkbvoxmv3nxmbu",
+              width: 150, height: 90, crop: :fill) %>
+      <% end  %>
+      <div class="bookings-text">
+        <strong><em><%= booking.garden.name %></em></strong>
+        <div class="bookings-timings">
+        <p><strong>Start:</strong> <%= booking.start_date.strftime("%m/%d/%Y") %> </p>
+        <p><strong>End:</strong> <%= booking.end_date.strftime("%m/%d/%Y") %> </p>
+        </div>
+      </div>
+    </div>
 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><%= booking.garden.name %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2>booking.garden.description</h2>
+            <h3><strong>Start:</strong> <%= booking.start_date.strftime("%m/%d/%Y") %> </h3>
+            <h3><strong>End:</strong> <%= booking.end_date.strftime("%m/%d/%Y") %> </h3>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+<div id="calendar">
+ <%= month_calendar events: @bookings do |date, bookings| %>
+   <%= date %>
+   <% bookings.each do |booking| %>
+     <div>
+       <%= booking.garden.name %>
+     </div>
+   <% end %>
+ <% end %>
+</div>

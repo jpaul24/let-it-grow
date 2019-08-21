@@ -1,0 +1,26 @@
+.mapboxgl-popup {
+  max-width: 100px;
+  max-height: 100px
+}
+
+.mapboxgl-popup-content {
+  text-align: left;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.info {
+  font-size: 18px;
+}
+
+img {
+  width: 100%;
+}
+
+#map {
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}

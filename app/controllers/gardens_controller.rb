@@ -5,6 +5,16 @@ class GardensController < ApplicationController
 
   def index
     @gardens = Garden.all
+
+    @geogardens = Garden.geocoded #returns flats with coordinates
+
+    @markers = @geogardens.map do |garden|
+      {
+        lat: garden.latitude,
+        lng: garden.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { garden: garden })
+      }
+    end
   end
 
   def new
@@ -13,11 +23,17 @@ class GardensController < ApplicationController
 
   def show
     @review = Review.new
+    @booking = Booking.new
   end
 
   def create
     @garden = Garden.new(garden_params)
-    @garden.save
+    @garden.user = current_user
+    if @garden.save
+      redirect_to garden_path(@garden)
+    else
+      render :new
+    end
   end
 
   def update
