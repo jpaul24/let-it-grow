@@ -2,7 +2,7 @@
   <div class="cards-container">
     <div class="item-card">
       <% if current_user.photo.url.nil? %>
-        <%= image_tag asset_path('avatar-default-picture.jpeg') %>
+        <%= image_tag('avatar-default-picture.jpg') %>
       <% else  %>
         <%= cl_image_tag current_user.photo %>
       <% end %>
