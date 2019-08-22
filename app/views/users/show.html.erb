@@ -1,7 +1,11 @@
 <div class="show-container">
   <div class="cards-container">
     <div class="item-card">
-      <img src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1479&q=80" />
+      <% if current_user.photo.url.nil? %>
+        <%= image_tag asset_path('avatar-default-picture.jpeg') %>
+      <% else  %>
+        <%= cl_image_tag current_user.photo %>
+      <% end %>
       <div class="card-product-infos">
         <div class="user-infos">
           <h4>Username: <%= current_user.username %></h4>
@@ -14,7 +18,13 @@
     </div>
     <h3 style="margin: 40px 0px 20px;">My Garden</h3>
     <div class="item-card">
-      <img src="https://images.unsplash.com/photo-1556201977-1df3c782a58e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" />
+
+      <% if current_user.photo.url.nil? %>
+        <%= image_tag asset_path('garden.jpeg') %>
+        <% else  %>
+          <%= cl_image_tag current_user.garden.photo %>
+        <% end %>
+
       <div class="garden-card">
         <%  current_user.gardens.each do |garden| %>
         <h4>Name: <%= garden.name %></h4>
