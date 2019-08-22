@@ -40,15 +40,15 @@
   </div>
 
    <div class="row">
-     <img class="quoteimage" src="<%= asset_path('gardeningimage.jpeg') %>" alt="">
-     <div class="quote-text">
+     <%= image_tag('gardeningimage.jpg', class: "quoteimage") %>
+          <div class="quote-text">
       <i class="fas fa-quote-left"></i>
       <h3>I love sharing my little garden with other veg-growers.</h3>
       <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium porro autem harum vel ipsa optio cum velit, sapiente.</p>
      </div>
    </div>
 </div>
-<div class="bottom-new-container" style="background-image: url('<%= asset_path('nice-garden.jpeg') %>')">
+<div class="bottom-new-container" style="background-image: url('<%= image_url 'nice-garden.jpg' %>')">
   <div>
     <h1>Ready to start?</h1>
   </div>

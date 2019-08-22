@@ -2,7 +2,7 @@
   <div class="cards-container">
     <div class="item-card">
       <% if current_user.photo.url.nil? %>
-        <%= image_tag asset_path('avatar-default-picture.jpeg') %>
+        <%= image_tag('avatar-default-picture.jpg') %>
       <% else  %>
         <%= cl_image_tag current_user.photo %>
       <% end %>
@@ -19,7 +19,7 @@
     <h3 style="margin: 40px 0px 20px;">My Garden</h3>
     <div class="item-card">
       <% if current_user.gardens.first.photo.url.nil? %>
-        <%= image_tag asset_path('garden.jpeg') %>
+        <%= image_tag('avatar-default-picture.jpg') %>
         <% else  %>
           <%= cl_image_tag current_user.gardens.first.photo %>
         <% end %>
