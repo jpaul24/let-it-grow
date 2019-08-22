@@ -48,12 +48,15 @@ class GardensController < ApplicationController
 
   def update
     @garden.update(garden_params)
+    authorize @garden
   end
 
   def edit
+    authorize @garden
   end
 
   def destroy
+    authorize @garden
     @garden.destroy
   end
 
