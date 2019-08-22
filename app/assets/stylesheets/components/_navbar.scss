@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  align-items: center;
+}
+
+.nav-border {
+  border-bottom: solid 0.5px rgba(30, 30, 30, 0.8);
 }
 
 .navbar-brand :hover {
@@ -21,21 +26,33 @@
 
 .nav-item {
   padding: 10px;
+  padding-bottom: 0;
+  align-items: center;
+  display: flex;
+}
+
+.light-hover :hover {
+  color: $light-gray;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.8);
+}
+
+.dark-hover :hover {
+  color: $gray;
+  border-bottom: solid 2px rgba(60, 60, 60, 0.8);
 }
 
 .nav-link-dark {
   color: $gray;
 }
 
+.nav-link-light {
+  color: $light-gray;
+}
+
 .navbar-light .navbar-nav .nav-link {
   // color: black;
   // font-weight: bold;
 }
-
-.navbar-light {
-  border-bottom: solid 0.5px rgba(60, 60, 60, 0.7);
-}
-
 
 .grow {
   font-family: 'Satisfy', cursive;
