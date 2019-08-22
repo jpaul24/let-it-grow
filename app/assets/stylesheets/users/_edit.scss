@@ -1,0 +1,30 @@
+.form {
+  padding-top: 25px;
+
+}
+
+.submit-btn {
+  padding: 13px 17px;
+  background-color: #5ca96f;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {background-color: #3e8e41}
+
+.edit-container {
+  width: 78%;
+  min-height: calc(100vh - 234px);
+
+}
+
+
+.btn {
+  color: white;
+  &:hover {
+  color: white;
+  }
+}
+
+// .container {
+
+// }
