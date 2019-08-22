@@ -6,6 +6,7 @@
     <%= f.input :username %>
     <%= f.input :bio %>
     <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <a class="submit-btn"><%= f.button :submit, value: "Submit", data: { disable_with: 'Submit'}%></a>
   <% end %>
   </div>

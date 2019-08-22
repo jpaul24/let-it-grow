@@ -18,15 +18,13 @@
     </div>
     <h3 style="margin: 40px 0px 20px;">My Garden</h3>
     <div class="item-card">
-
       <% if current_user.photo.url.nil? %>
         <%= image_tag asset_path('garden.jpeg') %>
         <% else  %>
           <%= cl_image_tag current_user.garden.photo %>
         <% end %>
-
+      <%  current_user.gardens.each do |garden| %>
       <div class="garden-card">
-        <%  current_user.gardens.each do |garden| %>
         <h4>Name: <%= garden.name %></h4>
         <h4>Location: <%= garden.location %></h4>
         <h4>Purpose: <%= garden.purpose %></h4>

@@ -3,6 +3,10 @@
   background: white;
 }
 
+.navbar-brand :hover {
+  opacity: 0.8;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -15,17 +19,21 @@
   background: rgba(0, 0, 0, 0)
 }
 
-.navbar-light .navbar-nav .nav-link .nav-font-black a {
+.nav-item {
+  padding: 10px;
+}
+
+.nav-link-dark {
   color: $gray;
-  &:hover {
-    color: rgba(0, 0, 0, 0.4);
-  }
-  font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: black;
-  font-weight: bold;
+  // color: black;
+  // font-weight: bold;
+}
+
+.navbar-light {
+  border-bottom: solid 0.5px rgba(60, 60, 60, 0.7);
 }
 
 
@@ -51,4 +59,19 @@
   font-size: 30px;
 }
 
+.modalplant {
+  font-size: 30px;
+}
 
+.modalplant :hover {
+  opacity: 0.6;
+}
+
+.modal-footer {
+  justify-content: left;
+  color: $gray;
+}
+
+#modallink {
+  color: $gray;
+}
