@@ -13,7 +13,7 @@ class GardensController < ApplicationController
         lat: garden.latitude,
         lng: garden.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { garden: garden }),
-        image_url: helpers.asset_url('plantblack.png')
+        image_url: helpers.asset_url('Marker.png')
       }
     end
   end
