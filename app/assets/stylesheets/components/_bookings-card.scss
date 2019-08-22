@@ -6,6 +6,7 @@
 }
 
 .bookings-card {
+  position: relative;
   display: flex;
   margin: 20px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -39,6 +40,16 @@
   h3 {
 
 
+  }
+}
+
+.bookings-delete {
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  i {
+    color: white;
   }
 }
 
