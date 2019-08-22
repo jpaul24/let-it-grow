@@ -3,6 +3,10 @@
   background: white;
 }
 
+.navbar-brand :hover {
+  opacity: 0.8;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -51,4 +55,19 @@
   font-size: 30px;
 }
 
+.modalplant {
+  font-size: 30px;
+}
 
+.modalplant :hover {
+  opacity: 0.6;
+}
+
+.modal-footer {
+  justify-content: left;
+  color: $gray;
+}
+
+#modallink {
+  color: $gray;
+}
