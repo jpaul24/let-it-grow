@@ -54,10 +54,21 @@
   // font-weight: bold;
 }
 
-.grow {
+#growlogo {
+  display: flex;
+  align-items: center;
+}
+
+.logotext {
   font-family: 'Satisfy', cursive;
-  color: white;
+  color: $light-gray;
   font-size: 40px;
+  margin: 0;
+}
+
+.plantlogo {
+  // width: 60px;
+  // height: 50px;
 }
 
 .icon {
