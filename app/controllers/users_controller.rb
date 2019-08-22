@@ -5,10 +5,14 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    authorize @user
   end
 
   def update
     current_user.update(user_params)
+    @user = current_user
+    authorize @user
     redirect_to user_path(current_user)
   end
 
