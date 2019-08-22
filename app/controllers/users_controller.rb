@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
     current_user
-    authorize current_user
   end
 
   def edit
