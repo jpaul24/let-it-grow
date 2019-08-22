@@ -4,12 +4,14 @@
 </div>
 
 <div class="all-show-container">
+
   <div class="show-content-container">
     <div class="header-show">
       <h2 ><%= @garden.name %></h2>
       <h5><%= @garden.location %></h5>
       <h6><%= @garden.size %>m²</h6>
     </div>
+
     <div class="margin-general">
       <div class="purpose">
         <p><strong>Purpose: </strong><%= @garden.purpose %></p>
@@ -18,6 +20,7 @@
         <p><%= @garden.description %></p>
       </div>
     </div>
+
     <div class="review-container">
       <h4>Reviews</h4>
       <% @garden.reviews.each do |review| %>
@@ -36,15 +39,16 @@
         <% end %>
       </div>
       <% end %>
-    <div class="btn-review">
-      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
-        Leave a review
-      </button>
-    </div>
+    <% if current_user != @garden.user %>
+      <div class="btn-review">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
+          Leave a review
+        </button>
+      </div>
+    <% end %>
   </div>
 
     <!-- Button trigger modal -->
-
 
     <div class="map">
       <div>
@@ -63,6 +67,7 @@
       </div>
     </div>
 
+<% if current_user != @garden.user %>
   <div id="booking-show">
     <div>
       <h3>£<%= @garden.price_per_day %>/day</h3>
@@ -77,6 +82,23 @@
         <% end %>
     </div>
   </div>
+
+<% else %>
+<div class="mybookings">
+  <h3>Your bookings for this garden:</h3>
+  <% if @garden.bookings.empty? %>
+    <p>You don't have any bookings yet.</p>
+  <% else %>
+    <% @garden.bookings.each do |booking| %>
+    <%= booking.start_date %>
+    <%= booking.end_date %>
+    <%= booking.user %>
+    <% end %>
+  <% end %>
+</div>
+  <% end %>
+
+
 </div>
 
 <!-- Modal -->
