@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   validates :username, presence: true
   validates :username, uniqueness: true
+  validates :photo, presence: true
 
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 end

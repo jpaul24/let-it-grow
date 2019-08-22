@@ -1,0 +1,90 @@
+.info-cards {
+  display: flex;
+  justify-content: space-around;
+  height: 310px;
+}
+
+.info-card i {
+  font-size: 100px;
+}
+
+.info-card {
+  color: $gray;
+  width: 380px;
+  height: 400px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.info-card p {
+  color: #696464;
+  font-size: 20px;
+  padding: 0px 20px;
+  color: rgb(50, 50, 50);
+}
+
+.text-center {
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.info-card h4 {
+  padding: 20px 0px;
+  font-size: 25px;
+}
+
+.container-height {
+ height: 550px;
+}
+
+.text-lger {
+  font-size: 40px;
+}
+
+.fill-green {
+  color: $green;
+}
+
+.quote-banner {
+  width: 100vw;
+  height: 40vh;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.quoteimage {
+  width: 50%;
+  padding: 40px;
+}
+
+.quote-text {
+  width: 50%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  padding-right: 120px;
+  padding-left: 10px;
+  flex-direction: column;
+}
+
+.quote-text h3 {
+  margin-top: 10px;
+}
+
+.fa-quote-left {
+  font-size: 50px;
+  color: $green;
+}
+
+
+// .img-third {
+//   display: flex;
+//   background-size: cover;
+//   height: 400px;
+//   margin: 0 1px;
+// }
+

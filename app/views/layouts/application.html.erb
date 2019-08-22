@@ -12,13 +12,13 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% if !current_page?(root_path) %>
+    <% if !current_page?(root_path) && !current_page?(new_garden_path) %>
         <%= render "shared/navbar" %>
     <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <% if !current_page?(root_path) %>
+    <% if !current_page?(root_path)%>
         <%= render "shared/footer" %>
     <% end %>
 

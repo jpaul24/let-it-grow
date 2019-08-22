@@ -1,42 +1,57 @@
-<div class="jumbotron" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+<div class="body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path 'https://res.cloudinary.com/nmozzer/image/upload/v1566305175/benjamin-combs-wuU_SSxDeS0-unsplash_sdgwbl.jpg', cloud_name: 'nmozzer' %>')">
-  <div class="jumbotron-text-container">
-    <h1 class="display-4">Hello Garden Owner!</h1>
-    <p class="lead text-lg">Want to see your garden used to its full potential? Travel below and find out more!</p>
-    <hr class="my-4">
-    <p class="text-padding">Looking to rent a garden rather than list one?</p>
-    <p class="lead">
-      <%= link_to "Take a walk through the gardens", gardens_path, class: "btn btn-primary btn-lg btn-green" %>
-  </div>
-  </p>
-</div>
-
-<div class="container flex container-height">
-  <h2 class="text-center text-lger">How it works</h2>
-  <div class="info-cards">
-    <div class="info-card">
-      <i class="fas fa-tractor tractor-red"></i>
-      <h4>Agriculture</h4>
-      <p>Rent a larger space for more serious growers.</p>
-    </div>
-    <div class="info-card">
-      <i class="fas fa-spa spa-green"></i>
-      <h4>Allotment</h4>
-      <p>Rent a smaller space for a green fingered enthusiast.</p>
-    </div>
-    <div class="info-card">
-      <i class="fas fa-glass-cheers cheers-yellow"></i>
-      <h4>Allota fun</h4>
-      <p>Rent your garden for a garden part.</p>
+  <%= render 'shared/home_navbar' %>
+  <div class="new-banner">
+    <div>
+      <div class="jumbotron-text-container">
+        <h1 class="display-4">Hello Garden Owner!</h1>
+        <p class="lead text-lg">Want to see your garden used to its full potential? Travel below and find out more!</p>
+        <hr class="my-4">
+        <p class="text-padding">Looking to rent a garden rather than list one?</p>
+        <p class="lead">
+          <%= link_to "Take a walk through the gardens", gardens_path, class: "btn btn-primary btn-lg btn-green" %>
+      </div>
+      </p>
     </div>
   </div>
+
 </div>
 
-<div class="image-banner">
-  <div class="img-third" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566310543/farming_avwucx.jpg')"></div>
-  <div class="img-third" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566310548/gardening_er7yrs.jpg')"></div>
-  <div class="img-third" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566310539/garden_party_nbmgve.jpg')"></div>
+<div class="container">
+
+  <div class="">
+    <h2 class="text-center text-lger">How it works</h2>
+    <div class="info-cards">
+      <div class="info-card">
+        <i class="fas fa-tractor fill-green"></i>
+        <h4>Allota farm</h4>
+        <p>Rent a larger space for more serious growers.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-spa fill-green"></i>
+        <h4>Allota ment</h4>
+        <p>Rent a smaller space for a green fingered enthusiast.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-glass-cheers fill-green"></i>
+        <h4>Allota fun</h4>
+        <p>Rent your garden for a garden party.</p>
+      </div>
+    </div>
+  </div>
+
+   <div class="row">
+     <img class="quoteimage" src="https://images.unsplash.com/photo-1524247108137-732e0f642303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80" alt="">
+     <div class="quote-text">
+      <i class="fas fa-quote-left"></i>
+      <h3>I love sharing my little garden with other veg-growers</h3>
+      <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium porro autem harum vel ipsa optio cum velit, sapiente.</p>
+     </div>
+   </div>
 </div>
+
+
+
 
 <div class="container d-flex justify-content-center align-items-center form-margin-top" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566311538/background-form-garden_vtguhd.jpg')">
   <button type="button" class="btn btn-green btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">List your Garden!</button>
