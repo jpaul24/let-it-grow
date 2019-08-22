@@ -1,6 +1,11 @@
-<%= simple_form_for current_user do |f| %>
-  <%= f.input :email %>
-  <%= f.input :username %>
-  <%= f.input :bio %>
-  <%= f.button :submit %>
-<% end %>
+
+<div class="container edit-container">
+  <div class="form">
+  <%= simple_form_for current_user do |f| %>
+    <%= f.input :email %>
+    <%= f.input :username %>
+    <%= f.input :bio %>
+    <a class="submit-btn"><%= f.button :submit, value: "Submit", data: { disable_with: 'Submit'}%></a>
+  <% end %>
+  </div>
+</div>

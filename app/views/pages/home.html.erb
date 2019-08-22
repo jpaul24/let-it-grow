@@ -3,7 +3,7 @@
   <%= render 'shared/home_navbar' %>
   <div class="card">
     <div class="tag">
-      <h1>Rent An Outside Space...</h1>
+      <h1>Rent an outside space.</h1>
     </div>
     <div class="search-bar">
       <div>Where</div>
@@ -12,7 +12,9 @@
           <%= text_field_tag :search, nil, class: "input-field" %>
           <div class="flex-btns" id="green-button">
             <%= submit_tag 'Search', class: "btn btn-success" %>
-            <button type="button" class="btn btn-success"><%= link_to "Browse All", gardens_path %></button>
+            <%= link_to gardens_path do  %>
+              <button type="button" class="btn btn-success">Browse All</button>
+            <% end %>
           </div>
         <% end %>
       </div>

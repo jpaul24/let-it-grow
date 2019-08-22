@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
-    <img src="https://picsum.photos/200/200" alt="">
+    <img src="<%= garden.photo %>" alt="">
   </div>
   <div class="row">
+    <%= link_to garden_path(garden) do %>
     <h4 class="title"><%= garden.name %></h4>
-    <p class="info"><%= garden.description %></p>
+    <% end %>
+    <p class="info"><%= garden.purpose %></p>
   </div>
 </div>
 
