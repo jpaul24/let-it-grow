@@ -27,7 +27,8 @@
 
 .text-center {
   justify-content: center;
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .info-card h4 {
@@ -46,4 +47,44 @@
 .fill-green {
   color: $green;
 }
+
+.quote-banner {
+  width: 100vw;
+  height: 40vh;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.quoteimage {
+  width: 50%;
+  padding: 40px;
+}
+
+.quote-text {
+  width: 50%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  padding-right: 120px;
+  padding-left: 10px;
+  flex-direction: column;
+}
+
+.quote-text h3 {
+  margin-top: 10px;
+}
+
+.fa-quote-left {
+  font-size: 50px;
+  color: $green;
+}
+
+
+// .img-third {
+//   display: flex;
+//   background-size: cover;
+//   height: 400px;
+//   margin: 0 1px;
+// }
 
