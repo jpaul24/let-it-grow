@@ -4,11 +4,7 @@ class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search].present?
-      @gardens = Garden.search_by_location(params[:search])
-    else
-      @gardens = Garden.all
-    end
+    @gardens = policy_scope(Garden).order(created_at: :desc)
 
     @geogardens = Garden.geocoded #returns flats with coordinates
 
@@ -23,6 +19,7 @@ class GardensController < ApplicationController
 
   def new
     @garden = Garden.new
+    authorize @garden
   end
 
   def show
@@ -41,6 +38,7 @@ class GardensController < ApplicationController
   def create
     @garden = Garden.new(garden_params)
     @garden.user = current_user
+    authorize @garden
     if @garden.save
       redirect_to garden_path(@garden)
     else
@@ -63,6 +61,7 @@ class GardensController < ApplicationController
 
   def set_garden
     @garden = Garden.find(params[:id])
+    authorize @garden
   end
 
   def garden_params
