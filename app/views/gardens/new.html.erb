@@ -1,20 +1,19 @@
-<div class="body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+<div class="new-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path 'https://res.cloudinary.com/nmozzer/image/upload/v1566305175/benjamin-combs-wuU_SSxDeS0-unsplash_sdgwbl.jpg', cloud_name: 'nmozzer' %>')">
   <%= render 'shared/home_navbar' %>
   <div class="new-banner">
-    <div>
-      <div class="jumbotron-text-container">
-        <h1 class="display-4">Hello Garden Owner!</h1>
-        <p class="lead text-lg">Want to see your garden used to its full potential? Travel below and find out more!</p>
-        <hr class="my-4">
-        <p class="text-padding">Looking to rent a garden rather than list one?</p>
-        <p class="lead">
-          <%= link_to "Take a walk through the gardens", gardens_path, class: "btn btn-primary btn-lg btn-green" %>
+    <div class="new-card">
+      <div>
+        <h1>Hello Garden Owner!</h1>
       </div>
-      </p>
+      <div>
+        <p>See your garden used to its full potential, rent it out for a range of uses so that you can make money off of your outdoor space</p>
+      </div>
+      <div>
+        <button type="button" class="btn btn-success w-100" data-toggle="modal" data-target=".bd-example-modal-lg">Get Started</button>
+      </div>
     </div>
   </div>
-
 </div>
 
 <div class="container">
