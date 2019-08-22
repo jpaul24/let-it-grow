@@ -1,7 +1,11 @@
 <div class="show-container">
   <div class="cards-container">
     <div class="item-card">
-      <img src="<%= current_user.photo %>" />
+      <% if current_user.photo.url.nil? %>
+        <%= image_tag asset_path('avatar-default-picture.jpeg') %>
+      <% else  %>
+        <%= cl_image_tag current_user.photo %>
+      <% end %>
       <div class="card-product-infos">
         <div class="user-infos">
           <h4>Username: <%= current_user.username %></h4>
@@ -14,8 +18,12 @@
     </div>
     <h3 style="margin: 40px 0px 20px;">My Garden</h3>
     <div class="item-card">
+      <% if current_user.gardens.first.photo.url.nil? %>
+        <%= image_tag asset_path('garden.jpeg') %>
+        <% else  %>
+          <%= cl_image_tag current_user.gardens.first.photo %>
+        <% end %>
       <%  current_user.gardens.each do |garden| %>
-      <img src="<%= garden.photo %>" />
       <div class="garden-card">
         <h4>Name: <%= garden.name %></h4>
         <h4>Location: <%= garden.location %></h4>
