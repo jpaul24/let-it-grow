@@ -48,10 +48,15 @@
      </div>
    </div>
 </div>
-
-<div class="container d-flex justify-content-center align-items-center form-margin-top" style="background-image: url('https://res.cloudinary.com/nmozzer/image/upload/v1566311538/background-form-garden_vtguhd.jpg')">
-  <button type="button" class="btn btn-green btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">List your Garden!</button>
+<div class="bottom-new-container" style="background-image: url('<%= asset_path('nice-garden.jpeg') %>')">
+  <div>
+    <h1>Ready to start?</h1>
+  </div>
+  <div>
+    <button type="button" class="btn btn-light" data-toggle="modal" data-target=".bd-example-modal-lg">Get Started</button>
+  </div>
 </div>
+
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -75,7 +80,7 @@
 
         </div>
         <div class="submit-center">
-            <%= f.button :submit, "List your Garden!", class: "text-center btn btn-green" %>
+            <%= f.button :submit, "List your Garden!", class: "new-submit btn btn-success" %>
           <% end %>
         </div>
       </div>
