@@ -3,6 +3,40 @@
   justify-content: space-around;
   height: 310px;
 }
+.new-banner {
+  display: flex;
+  justify-content: flex-end;
+
+}
+.new-card {
+  width: 460px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  margin: 100px 200px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h1 {
+    font-size: 40px;
+    font-weight: 550;
+    color: rgb(65, 65, 65);
+  };
+  p {
+    font-size: 16px;
+  };
+  .btn {
+    font-size:20px;
+    font-weight: 500;
+  }
+}
+.new-body {
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+
+}
 
 .info-card i {
   font-size: 100px;
