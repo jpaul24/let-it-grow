@@ -11,9 +11,9 @@ p {
 }
 
 a {
-  color: white;
+  color: $gray;
   &:hover {
-    color: white;
+    opacity: 0.8;
     text-decoration: none;
   }
 }
