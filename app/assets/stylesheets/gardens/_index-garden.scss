@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.garden-card {
+  margin-bottom: 20px;
+}
+
 .header {
   margin: 15px 0;
   font-size: 22px;
@@ -37,8 +41,10 @@
 
 .card-info {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   color: $gray;
+  height: 130px;
 }
 
 .row {
