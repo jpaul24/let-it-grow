@@ -1,7 +1,16 @@
 <div class="review-show" data-garden-id="<%= @garden.id %>">
   <div class="review-info-small space-between">
     <p id="review-name"><%= review.user.username %></p>
-    <p> Rating: <%= review.rating %>/5 </p>
+    <div>
+       <p class="reviewrating"> Rating:</p>
+       <% review.rating.times do %>
+         <i class="fas fa-star yellow"></i>
+       <% end %>
+       <% empty = 5 - review.rating %>
+       <% empty.times do %>
+         <i class="far fa-star yellow"></i>
+         <% end %>
+    </div>
   </div>
   <div>
     <p><%= review.description %> </p>
