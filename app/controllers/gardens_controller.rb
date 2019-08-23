@@ -52,6 +52,7 @@ class GardensController < ApplicationController
   def update
     @garden.update(garden_params)
     authorize @garden
+    redirect_to garden_path(@garden)
   end
 
   def edit

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     current_user
     authorize current_user
+    # @garden.user = @garden
   end
 
   def edit
