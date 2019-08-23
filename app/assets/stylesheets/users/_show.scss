@@ -1,13 +1,30 @@
 // card Garden
 
+div.card-container-user {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
 
-.item-card {
+div.card-container-garden {
   overflow: hidden;
   height: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+}
+
+.item-card {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .item-card img {
@@ -81,6 +98,9 @@
 }
 
 .btn-update {
+  // position: absolute;
+  display: flex;
+  justify-content :flex-end;
   margin-top: 25px;
   margin-left: 15px;
   text-decoration: none;
@@ -88,6 +108,7 @@
   background-color: #5CA96F;
   color: white;
   border-radius: 5px;
+
 }
 
 .btn-update:hover {background-color: #3e8e41}
@@ -131,11 +152,18 @@ a {
 }
 
 .card-product-infos {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  height: 100%;
+  padding: 20px;
 }
 
 .first-button {
-  padding-top: 40px;
+  // padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
+div.card-container-user img {
+  border-radius: 50%;
+}

@@ -1,0 +1,32 @@
+
+<div>
+<!--   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+    Update my garden
+  </button> -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Update my garden</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for garden do |f| %>
+            <%= f.input :name, label: 'Garden name', error: 'Garden name is mandatory, please specify one' %>
+            <%= f.input :description, label: 'Garden description', error: 'Garden description is mandatory, please specify one' %>
+            <%= f.input :price_per_day, label: 'Price per day', error: 'Price per day is mandatory, please specify one' %>
+            <%= f.input :size, label: 'Garden size', error: 'Garden size is mandatory, please specify one' %>
+            <%= f.input :location, label: 'location', error: 'Location is mandatory, please specify one' %>
+            <%= f.input :purpose, label: 'purpose', error: 'Purpose is mandatory, please specify one' %>
+            <%= f.input :photo %>
+        </div>
+        <div class="modal-footer">
+            <%= f.button :submit, 'Save changes', class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
