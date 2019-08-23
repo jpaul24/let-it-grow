@@ -3,7 +3,7 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :garden
 
-  validates :description, presence: true
+  validates :description, presence: true, length: { minimum: 20 }
   validates :rating, presence: true
   validates :rating, inclusion: { in: RATING }
 

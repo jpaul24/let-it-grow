@@ -1,0 +1,19 @@
+
+<div class="review-container" id="reviews">
+  <h4>Reviews</h4>
+  <h5 class="review-spacing"><%= pluralize garden.reviews.size, "review" %></h5>
+  <% if garden.reviews.blank? %>
+    <p class="review-spacing">Be the first to leave a review</p>
+  <% else %>
+    <% garden.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+  <% if current_user != garden.user %>
+    <div class="btn-review">
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
+        Leave a review
+      </button>
+    </div>
+  <% end %>
+</div>

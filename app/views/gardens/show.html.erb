@@ -26,32 +26,7 @@
       <p>Delete</p>
     </div>
 
-    <div class="review-container">
-      <h4>Reviews</h4>
-      <% @garden.reviews.each do |review| %>
-      <div class="review-show">
-        <div class="review-info-small space-between">
-          <p><strong><%= review.user.username %></strong></p>
-          <p> Rating: <%= review.rating %>/5 </p>
-        </div>
-        <div>
-          <p><%= review.description %> </p>
-        </div>
-        <% if policy(review).destroy? %>
-          <%= link_to review_path(review), method: :delete do  %>
-            <i class="fas fa-trash-alt" ></i>
-          <% end %>
-        <% end %>
-      </div>
-      <% end %>
-    <% if current_user != @garden.user %>
-      <div class="btn-review">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
-          Leave a review
-        </button>
-      </div>
-    <% end %>
-  </div>
+    <%= render 'reviews', garden: @garden %>
 
     <!-- Button trigger modal -->
 
@@ -118,16 +93,15 @@
       </div>
       <div class="modal-body">
       <div class="review-add">
-        <%= simple_form_for [@garden, @review] do |f| %>
-        <%= f.input :description %>
-        <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
-        <% if policy(Review).create? %>
-          <%= f.button :submit, class: "btn btn-success" %>
-        <% end %>
+        <%= simple_form_for [@garden, @review], remote: :true do |f| %>
+          <%= f.input :description %>
+          <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
+          <% if policy(Review).create? %>
+            <%= f.button :submit, class: "btn btn-success", id: 'modal-close' %>
+          <% end %>
         <% end %>
       </div>
       </div>
     </div>
   </div>
 </div>
-
