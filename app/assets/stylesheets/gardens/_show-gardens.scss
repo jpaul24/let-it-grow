@@ -9,6 +9,18 @@
   justify-content: center;
 }
 
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.nameavatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .show-image-container {
   height: 430px;
   width: 70%;
