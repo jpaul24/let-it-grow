@@ -1,8 +1,8 @@
 
 <div class="review-container" id="reviews">
   <h4>Reviews</h4>
-  <h5 class="review-spacing" id="review-count"><%= pluralize garden.reviews.size, "review" %></h5>
-  <% if garden.reviews.blank? %>
+  <h5 class="review-spacing" id="review-count"><%= pluralize @garden.reviews.size, "review" %></h5>
+  <% if @garden.reviews.blank? %>
     <p class="review-spacing">Be the first to leave a review</p>
   <% else %>
     <% garden.reviews.each do |review| %>
@@ -17,3 +17,5 @@
     </div>
   <% end %>
 </div>
+
+q
