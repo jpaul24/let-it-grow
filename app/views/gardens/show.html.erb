@@ -27,49 +27,17 @@
       </div>
     </div>
     <br>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
-      Update my garden
-    </button>
-    <%= render 'shared/update-garden', garden: @garden %>
+    <div>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+        Update my garden
+      </button>
+      <%= render 'shared/update-garden', garden: @garden %>
+    </div>
 
 
     <%= render 'reviews', garden: @garden %>
 
-    <div class="review-container">
-      <h4>Reviews</h4>
-      <% @garden.reviews.each do |review| %>
-      <div class="review-show">
-        <div class="review-info-small space-between">
-          <p><strong><%= review.user.username %></strong></p>
-          <div>
-            <p class="reviewrating"> Rating:</p>
-            <% review.rating.times do %>
-              <i class="fas fa-star yellow"></i>
-            <% end %>
-            <% empty = 5 - review.rating %>
-            <% empty.times do %>
-              <i class="far fa-star yellow"></i>
-              <% end %>
-          </div>
-        </div>
-        <div>
-          <p><%= review.description %> </p>
-        </div>
-        <% if policy(review).destroy? %>
-          <%= link_to review_path(review), method: :delete do  %>
-            <i class="fas fa-trash-alt" ></i>
-          <% end %>
-        <% end %>
-      </div>
-      <% end %>
-    <% if current_user != @garden.user %>
-      <div class="btn-review">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
-          Leave a review
-        </button>
-      </div>
-    <% end %>
-  </div>
+
 
     <!-- Button trigger modal -->
 
@@ -77,18 +45,19 @@
       <div>
         <h4>Location</h4>
       </div>
-      <div >
-        <p id="location"><%= @garden.location %></p>
-      </div>
+        <div >
+          <p id="location"><%= @garden.location %></p>
+        </div>
         <div
-      id="map"
-      style="width: 100%;
-      height: 500px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-      </div>
+          id="map"
+          style="width: 100%;
+          height: 500px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          >
+        </div>
     </div>
+  </div>
 
 <% if current_user != @garden.user %>
   <div id="booking-show">
@@ -107,18 +76,18 @@
   </div>
 
 <% else %>
-<div class="mybookings">
-  <h3>Your bookings for this garden:</h3>
-  <% if @garden.bookings.empty? %>
-    <p>You don't have any bookings yet.</p>
-  <% else %>
-    <% @garden.bookings.each do |booking| %>
-    <%= booking.start_date %>
-    <%= booking.end_date %>
-    <%= booking.user %>
+  <div class="mybookings">
+    <h3>Your bookings for this garden:</h3>
+    <% if @garden.bookings.empty? %>
+      <p>You don't have any bookings yet.</p>
+    <% else %>
+      <% @garden.bookings.each do |booking| %>
+      <%= booking.start_date %>
+      <%= booking.end_date %>
+      <%= booking.user %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
   <% end %>
 </div>
 
@@ -134,7 +103,8 @@
       </div>
       <div class="modal-body">
       <div class="review-add">
-        <%= simple_form_for [@garden, @review], remote: :true do |f| %>
+
+        <%= simple_form_for [@garden, @review], remote: true do |f| %>
         <%= f.input :description %>
         <%= f.input :rating, as: :select, collection: [ 1, 2, 3, 4, 5 ] %>
         <% if policy(Review).create? %>

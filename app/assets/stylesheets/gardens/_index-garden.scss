@@ -1,8 +1,5 @@
 @import "show-gardens";
 
-.hover:hover {
-  opacity: 0.8;
-}
 .index-container {
   width: 90%;
   margin: 0 auto;
@@ -15,15 +12,21 @@
   width: 110px;
   position: absolute;
   top: 5px;
-  right: 100px;
+  right: 135px;
   display: flex;
   justify-content: center;
   border-radius: 5px;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .garden-card {
   margin-bottom: 20px;
   position: relative;
+  &:hover {
+  opacity: 0.8;
+}
 }
 
 .header {
