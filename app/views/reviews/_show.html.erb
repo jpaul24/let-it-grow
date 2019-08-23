@@ -1,0 +1,14 @@
+<div class="review-show" data-garden-id="<%= @garden.id %>">
+  <div class="review-info-small space-between">
+    <p id="review-name"><%= review.user.username %></p>
+    <p> Rating: <%= review.rating %>/5 </p>
+  </div>
+  <div>
+    <p><%= review.description %> </p>
+  </div>
+  <% if policy(review).destroy? %>
+    <%= link_to review_path(review), method: :delete, remote: true do  %>
+      <i class="fas fa-trash-alt" ></i>
+    <% end %>
+  <% end %>
+</div>

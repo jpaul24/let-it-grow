@@ -1,0 +1,6 @@
+console.log('Hi');
+reviews = document.getElementById('reviews');
+reviews.innerHTML = "";
+reviews.innerHTML = "<%= j render 'reviews', garden: @garden %>"
+
+hideModal()

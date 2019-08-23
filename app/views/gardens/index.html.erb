@@ -10,6 +10,9 @@
       <div class="row">
       <% @gardens.each do |garden| %>
         <div class="col-4 garden-card hover" data-garden-id="<%= garden.id %>">
+          <% if garden.user == current_user %>
+          <p class="your_garden">Your garden</p>
+          <% end %>
           <%= link_to garden_path(garden) do %>
           <%= cl_image_tag(garden.photo, height: 200,
              crop: :fill) %>
