@@ -3,19 +3,28 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    garden = Garden.find(params[:garden_id].to_i)
+    @garden = Garden.find(params[:garden_id].to_i)
     @review.rating = params[:review][:rating].to_i
-    @review.garden = garden
+    @review.garden = @garden
     @review.user = current_user
-    @review.save
-    redirect_to garden_path(garden)
+    if @review.save
+      respond_to do |format|
+        format.html { redirect_to garden_path(@garden) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'gardens/show' }
+        format.js  # <-- idem
+      end
+    end
     authorize @review
   end
 
   def destroy
-    garden = Garden.find(@review.garden_id)
+    @garden = Garden.find(@review.garden_id)
     @review.destroy
-    redirect_to garden_path(garden)
+    # redirect_to garden_path(@garden)
     authorize @review
   end
 
