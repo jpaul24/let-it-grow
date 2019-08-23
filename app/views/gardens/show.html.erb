@@ -20,13 +20,50 @@
         <p><%= @garden.description %></p>
       </div>
     </div>
+    <br>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+      Update my garden
+    </button>
+    <%= render 'shared/update-garden', garden: @garden %>
 
-    <div>
-      <p>Update</p>
-      <p>Delete</p>
-    </div>
 
     <%= render 'reviews', garden: @garden %>
+
+    <div class="review-container">
+      <h4>Reviews</h4>
+      <% @garden.reviews.each do |review| %>
+      <div class="review-show">
+        <div class="review-info-small space-between">
+          <p><strong><%= review.user.username %></strong></p>
+          <div>
+            <p class="reviewrating"> Rating:</p>
+            <% review.rating.times do %>
+              <i class="fas fa-star yellow"></i>
+            <% end %>
+            <% empty = 5 - review.rating %>
+            <% empty.times do %>
+              <i class="far fa-star yellow"></i>
+              <% end %>
+          </div>
+        </div>
+        <div>
+          <p><%= review.description %> </p>
+        </div>
+        <% if policy(review).destroy? %>
+          <%= link_to review_path(review), method: :delete do  %>
+            <i class="fas fa-trash-alt" ></i>
+          <% end %>
+        <% end %>
+      </div>
+      <% end %>
+    <% if current_user != @garden.user %>
+      <div class="btn-review">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
+          Leave a review
+        </button>
+      </div>
+    <% end %>
+  </div>
 
     <!-- Button trigger modal -->
 
@@ -77,8 +114,6 @@
   <% end %>
 </div>
   <% end %>
-
-
 </div>
 
 <!-- Modal -->
@@ -93,12 +128,12 @@
       </div>
       <div class="modal-body">
       <div class="review-add">
-        <%= simple_form_for [@garden, @review], remote: :true do |f| %>
-          <%= f.input :description %>
-          <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
-          <% if policy(Review).create? %>
-            <%= f.button :submit, class: "btn btn-success", id: 'modal-close' %>
-          <% end %>
+        <%= simple_form_for [@garden, @review] do |f| %>
+        <%= f.input :description %>
+        <%= f.input :rating, as: :select, collection: [ 1, 2, 3, 4, 5 ] %>
+        <% if policy(Review).create? %>
+          <%= f.button :submit, class: "btn btn-success" %>
+        <% end %>
         <% end %>
       </div>
       </div>

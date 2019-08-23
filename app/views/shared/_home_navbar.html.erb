@@ -35,9 +35,9 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item d-flex">
-          <%= render 'devise/sessions/new' %>
-          <%= render 'devise/registrations/new' %>
+        <li class="nav-item d-flex light-hover">
+          <%= render 'devise/sessions/new', class: "nav-link" %>
+          <%= render 'devise/registrations/new', class: "nav-link" %>
           <%= link_to "Gardens", gardens_path, class: "nav-link" %>
         </li>
       <% end %>

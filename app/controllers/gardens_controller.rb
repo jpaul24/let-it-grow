@@ -16,6 +16,8 @@ class GardensController < ApplicationController
         image_url: helpers.asset_url('Group.png')
       }
     end
+
+
   end
 
   def new
@@ -50,6 +52,7 @@ class GardensController < ApplicationController
   def update
     @garden.update(garden_params)
     authorize @garden
+    redirect_to garden_path(@garden)
   end
 
   def edit

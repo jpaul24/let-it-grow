@@ -9,15 +9,36 @@
     <div class="col-8">
       <div class="row">
       <% @gardens.each do |garden| %>
-        <div class="col-4 hover">
+        <div class="col-4 garden-card hover">
           <%= link_to garden_path(garden) do %>
           <%= cl_image_tag(garden.photo, height: 200,
              crop: :fill) %>
-          <p class="purpose"><%= garden.purpose.upcase %></p>
-            <h3 class="card-title"><%= garden.name %> </h3>
             <div class="card-info">
+              <p class="purpose"><%= garden.purpose.upcase %></p>
+              <h3 class="card-title"><%= garden.name %> </h3>
               <p class="card-text m-0 p-0">£<%= garden.price_per_day %>/day | <%= garden.size %>m²</p>
+              <div>
+                <% if garden.reviews.empty? %>
+                  <% 5.times do %>
+                  <i class="far fa-star yellow"></i>
+                  <% end %>
+                <% else %>
+                  <% ratings = [] %>
+                  <% garden.reviews.each do |review| %>
+                  <% ratings << review.rating %>
+                  <% end %>
+                  <% rating = (ratings.sum) / ratings.length %>
+                  <% rating.times do %>
+                    <i class="fas fa-star yellow"></i>
+                  <% end %>
+                  <% empty = 5 - rating %>
+                  <% empty.times do %>
+                    <i class="far fa-star yellow"></i>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
+
         </div>
         <% end %>
       <% end %>

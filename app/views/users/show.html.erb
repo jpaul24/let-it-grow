@@ -1,39 +1,49 @@
 <div class="show-container">
   <div class="cards-container">
-    <div class="item-card">
-      <% if current_user.photo.url.nil? %>
-        <%= image_tag('avatar-default-picture.jpg') %>
-      <% else  %>
-        <%= cl_image_tag current_user.photo %>
-      <% end %>
-      <div class="card-product-infos">
-        <div class="user-infos">
-          <h4>Username: <%= current_user.username %></h4>
-          <h4>Bio: <%= current_user.bio %></h4>
-        </div>
-        <div class="first-button">
-          <span class="btn-update"><%= link_to "Update profile", edit_user_path %></span>
-        </div>
-      </div>
-    </div>
-    <h3 style="margin: 40px 0px 20px;">My Garden</h3>
-    <div class="item-card">
-      <% if current_user.gardens.first.photo.url.nil? %>
-        <%= image_tag('avatar-default-picture.jpg') %>
+    <div class="card-container-user">
+      <div class="item-card">
+        <% if current_user.photo.url.nil? %>
+          <%= image_tag('avatar-default-picture.jpg') %>
         <% else  %>
-          <%= cl_image_tag current_user.gardens.first.photo %>
+          <%= cl_image_tag current_user.photo %>
         <% end %>
-      <%  current_user.gardens.each do |garden| %>
-      <div class="garden-card">
-        <h4>Name: <%= garden.name %></h4>
-        <h4>Location: <%= garden.location %></h4>
-        <h4>Purpose: <%= garden.purpose %></h4>
-        <h4>Price: <%= garden.price_per_day %></h4>
-        <h4>Size: <%= garden.size %></h4>
-        <% end %>
+        <div class="card-product-infos">
+          <div class="user-infos">
+            <h4>Username: <%= current_user.username %></h4>
+            <h4>Bio: <%= current_user.bio %></h4>
+          </div>
+          <div class="first-button">
+            <div><span class="btn-update"><%= link_to "Update profile", edit_user_path %></span></div>
+            <div><span class="btn-update"><%= link_to "My bookings", bookings_path %></span></div>
+          </div>
+        </div>
       </div>
     </div>
-    <br>
-    <span class="btn-bookings"><%= link_to "My bookings", bookings_path %></span>
+      <h3 style="margin: 40px 0px 20px;">My Garden</h3>
+    <div class="card-container-garden">
+      <div class="item-card">
+        <% if current_user.gardens.first.photo.url.nil? %>
+          <%= image_tag('avatar-default-picture.jpg') %>
+          <% else  %>
+            <%= cl_image_tag current_user.gardens.first.photo %>
+          <% end %>
+        <%  current_user.gardens.each do |garden| %>
+          <div class="garden-card">
+            <h4>Name: <%= garden.name %></h4>
+            <h4>Location: <%= garden.location %></h4>
+            <h4>Purpose: <%= garden.purpose %></h4>
+            <h4>Price: <%= garden.price_per_day %></h4>
+            <h4>Size: <%= garden.size %></h4>
+          </div>
+            <div style="text-align: center; flex-grow: 1;"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+              Update my garden
+            </button>
+            </div>
+          <%= render 'shared/update-garden', garden: garden %>
+            <% end %>
+      </div>
+      <br>
+
+    </div>
   </div>
 </div>
