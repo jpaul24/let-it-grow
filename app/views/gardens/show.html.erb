@@ -7,7 +7,13 @@
 
   <div class="show-content-container">
     <div class="header-show">
-      <h2 ><%= @garden.name %></h2>
+      <div class="nameavatar">
+        <h2><%= @garden.name %></h2>
+        <div>
+          <%= cl_image_tag @garden.user.photo, class: "avatar" %>
+        </div>
+
+      </div>
       <h5><%= @garden.location %></h5>
       <h6><%= @garden.size %>m²</h6>
     </div>
