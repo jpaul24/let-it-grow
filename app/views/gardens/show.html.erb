@@ -32,7 +32,16 @@
       <div class="review-show">
         <div class="review-info-small space-between">
           <p><strong><%= review.user.username %></strong></p>
-          <p> Rating: <%= review.rating %>/5 </p>
+          <div>
+            <p class="reviewrating"> Rating:</p>
+            <% review.rating.times do %>
+              <i class="fas fa-star yellow"></i>
+            <% end %>
+            <% empty = 5 - review.rating %>
+            <% empty.times do %>
+              <i class="far fa-star yellow"></i>
+              <% end %>
+          </div>
         </div>
         <div>
           <p><%= review.description %> </p>
@@ -118,7 +127,7 @@
       <div class="review-add">
         <%= simple_form_for [@garden, @review] do |f| %>
         <%= f.input :description %>
-        <%= f.input :rating, collection: [ 0, 1, 2, 3, 4, 5 ] %>
+        <%= f.input :rating, as: :select, collection: [ 1, 2, 3, 4, 5 ] %>
         <% if policy(Review).create? %>
           <%= f.button :submit, class: "btn btn-success" %>
         <% end %>

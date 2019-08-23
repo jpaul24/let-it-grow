@@ -16,6 +16,8 @@ class GardensController < ApplicationController
         image_url: helpers.asset_url('Group.png')
       }
     end
+
+
   end
 
   def new

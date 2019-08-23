@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.nav-link:hover {
+  color: $light-gray;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.8);
+}
+
+
 .nav-border {
   border-bottom: solid 0.5px rgba(30, 30, 30, 0.8);
 }
@@ -31,7 +37,8 @@
   display: flex;
 }
 
-.light-hover :hover {
+
+.text-hover a:hover {
   color: $light-gray;
   border-bottom: solid 2px rgba(255, 255, 255, 0.8);
 }
